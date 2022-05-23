@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+
+<head id="Head1">
+    <meta charset="utf-8" />
+    <title>NGHIÊN CỨU KHOA HỌC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" />
+    <meta name="author" />
+    <!-- <style>
+        .csspicfile {
+            height: 15px;
+            width: 10px;
+        }
+        .highlight {
+            background-color: #fbfb06;
+        }
+    </style> -->
+    <link href="css/toastr.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/toastr.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Arimo:700&subset=vietnamese,latin' rel='stylesheet' type='text/css'>-->
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Owl CSS -->
+    <!--<link rel="stylesheet" href="css/owl.carousel.css">-->
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+
+    <!-- Theme CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/logo.png">
+</head>
+
+<body>
+
+    <body class="child-body">
+        <div class="preHeader">
+            <div class="container">
+                <ul class="list-inline navbar-text  soc-list hidden-xs">
+                </ul>
+                <!-- <ul class="list-inline navbar-text navbar-right">
+                    <li id="ulUserBar">
+                        <a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-user"></i> Đăng nhập</a>
+                    </li>
+                </ul> -->
+                <ul class="list-inline navbar-text navbar-right">
+                    <li id="ulUserBar" class="dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                            class="dropdown-toggle" href="#">
+                            <i class="fa fa-user"> B1809606 </i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Thông tin cá nhân</a></li>
+                            <li><a href="">Thoát</a></li>
+                        </ul>
+            </div>
+        </div>
+        <!-- Modal login -->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" id="btnCloseModal" data-dismiss="modal"
+                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Đăng nhập</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group"></div>
+                        <form id="form-login">
+                            <div class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtLoginName">Tên truy cập</label>
+                                <input class="form-control" id="username" placeholder="LoginName" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtPassword">Mật khẩu</label>
+                                <input type="password" id="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Lưu mật khẩu
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                        <button type="button" id="submit-form" class="btn btn-primary">Đăng nhập</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--========== TOP BANNER =========-->
+        <div class="topBanner hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-sm-12">
+                        <div class="topBannerLeft clearfix">
+                            <a><img src="img/logo1.png" alt="" width="100%" height="134" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== /TOP BANNER =========-->
+        <!--========== TOP MENU =========-->
+        <nav class="navbar navbar-default navbar-static-top topMenu" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ecosoftNav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand visible-xs" href="index.html"><img src="img/logo1.png" alt=""
+                            width="580" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="ecosoftNav">
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="dropdown"><a  class="logo-header" ><img src="img/logo.png" alt="" /></a> </li>  -->
+                        <li class="dropdown active"><a href="index.html">Tra cứu tài liệu</a></li>
+                        <li class="nav-item">
+                            <a href="donvi.html">
+                                GV Hướng dẫn
+                            </a>
+                        </li>
+                        <li class="dropdown "><a href="tintuc.html">Tin tức-Sự kiện</a></li>
+                        <li class="dropdown "><a href="quydinh.html">Quy định</a></li>
+                        <li class="dropdown "><a href="lienhe.html">Liên hệ</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!--========== /TOP MENU =========-->
+        <section class="sub-banner">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li><a href="#">Tra cứu tài liệu</a></li>
+                        <!-- <li class="active">Cơ bản</li> -->
+                    </ol>
+                    <div id="divTabContent" class="tab-content tab-search">
+                        <div id="form-quick" class="tab-panel active">
+                            <div id="form-quick-content" class="form-cn form-quick child">
+                                <div class="form-search row">
+                                    <div class="form-field col-sm-12">
+                                        <label><span></span></label>
+                                        <input type="text" class="field-input" id="txtSearchValueform" value="" placeholder="Tìm kiếm tại đây...">
+                                    </div>
+                                    <!-- <div class="form-submit  col-sm-2">
+                                        <button type="submit" class="awe-btn medium awe-search">
+                                            <i class="fa fa-search"></i> Tìm kiếm
+                                        </button>
+                                    </div> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br><br><br><br><br>
+        <div class="container">
+            <div class="child-container">
+                <div class="row">
+                    <div class="col-sm-12"></div>
+                    <div class="col-sm-3">
+                        <div class="sidebar-cn">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default widget-sidebar">
+                                    <div class="panel-heading">
+                                        <center>
+                                            <h4 class="panel-title panel-title-adjust">
+                                                Chuyên ngành
+                                            </h4>
+                                        </center>
+                                    </div>
+                                    <div class="panel-collapse collapse in" aria-expanded="true">
+                                        <div class="panel-body">
+                                            <ul id="list-bomon" class="widget-ul">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel-heading border-category">
+                                        <center>
+                                            <h4 class="panel-title panel-title-adjust">
+                                                Chủ đề
+                                            </h4>
+                                        </center>
+                                    </div>
+                                    <div class="panel-collapse collapse in" aria-expanded="true">
+                                        <div class="panel-body">
+                                            <!-- <ul id="" class="widget-ul">
+                                                <li>
+                                                    <div class="radio-checkbox">
+                                                        <input type="checkbox" name="1" id="1" class="checkbox">
+                                                        <label for="1">Website thương mại</label>
+                                                    </div> 
+                                                </li>
+                                                <li>
+                                                    <div class="radio-checkbox">
+                                                        <input type="checkbox" name="2" id="2" class="checkbox">
+                                                        <label for="2">Hệ thống quản lý</label>
+                                                    </div> 
+                                                </li>
+                                            </ul> -->
+                                            <div class="form-group">
+                                                <div class="col-sm-6 col-md-12">
+                                                    <select onchange="filterLuanVan()" id="list-chude" class="form-control chuDe">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-heading border-category">
+                                        <center>
+                                            <h4 class="panel-title panel-title-adjust">
+                                                Ngôn ngữ
+                                            </h4>
+                                        </center>
+                                    </div>
+                                    <div class="panel-collapse collapse in" aria-expanded="true">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <div class="col-sm-6 col-md-12">
+                                                    <select onchange="filterLuanVan()" id="list-ngonngu" class="form-control ngonNgu">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-heading border-category">
+                                        <center>
+                                            <h4 class="panel-title panel-title-adjust">
+                                                Công nghệ
+                                            </h4>
+                                        </center>
+                                    </div>
+                                    <div class="panel-collapse collapse in" aria-expanded="true">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <div class="col-sm-6 col-md-12">
+                                                    <select onchange="filterLuanVan()" id="list-congnghe" class="form-control chuDe">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9" id="list-luanvan">
+
+                    </div>
+                    <div id="pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-menu-wrapper">
+            <div class="container">
+                <ul class="list-inline footer-menu">
+                    <li><a href="">Công nghệ thông tin</a></li>
+                    <li><a href="">Công nghệ phần mềm</a></li>
+                    <li><a href="">Hệ thống thông tin</a></li>
+                    <li><a href="">Mạng máy tính</a></li>
+                    <li><a href="">Khoa học máy tính</a></li>
+                    <li><a href="">Tin học ứng dụng</a></li>
+                </ul>
+            </div>
+        </div>
+        <section class="copyright">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <a href="#" class="logo-header image-footer"><img alt="" src="img/logo.png"></a>
+                        <address><strong>KHOA CNTT-TT</strong><br>
+                            Khu 2 - Đường 3/2 - Q.Ninh Kiều - TP.Cần Thơ<br>
+                            ĐT: 0292 3 831565 - Email: tthl@ctu.edu.vn<br>
+                        </address>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Jquery -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <!-- Owl carousel JS -->
+        <!--<script src="js/owl.carousel.min.js"></script>-->
+
+        <!-- Hover dropdown JS -->
+        <script src="js/bootstrap-hover-dropdown.min.js"></script>
+
+        <!-- Parallax JS -->
+        <script src="js/parallax.min.js"></script>
+        <script src="js/jquery.raty.js"></script>
+        <!-- Theme JS -->
+        <script type="text/javascript" src="js/searchjs.js"></script>
+        <script type="text/javascript" src="js/mudim.js"></script>
+        <script type="text/javascript" src="javascripts/login.js"></script>
+        <script type="text/javascript" src="javascripts/handleLuanVan.js"></script>
+        <!-- <script type="text/javascript" src="javascripts/paginate.js"></script> -->
+        <script>
+            var v = 0;
+            $('#txtSearchValueform').keyup(function (e) {
+                var apiSearch = 'http://localhost:8120/api/luanvan?searchKey='+$('#txtSearchValueform').val();
+                var requestOptions = {
+                    method: 'GET',
+                    redirect: 'follow'
+                };
+                fetch(apiSearch, requestOptions)
+                    .then(response => response.json())
+                    .then(result => {
+                        var listLuanVan = document.querySelector("#list-luanvan");
+                        var LuanVan = result;
+                        const date = result.luavan[0].createdDate;
+                        let d = new Date(date);
+                        let year = d.getFullYear();
+                        let month = d.getMonth() + 1;
+                        let day = d.getDate();
+                        var    html = `
+                                <div class="col-sm-4" style="height: 450px; padding-bottom: 40px">
+                                    <div class="card shadow-sm">
+                                        <img src="images/no-thumb/a1.png" class="card-img-top" width="100%" height="300">
+
+                                        <div class="card-body">
+                                            <h4>${result.luavan[0].tuaDe}</h4>
+                                            <center>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <a href="details.html?id=${result.luavan[0].id}" class="btn btn-sm btn-outline-secondary">View</a>
+                                                        
+                                                    </div>
+                                                    <small class="text-muted">${day}-${month}-${year}</small>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                                `;
+                    
+                     listLuanVan.innerHTML = html;
+                    })
+                    .catch(error => {
+                        var listLuanVan = document.querySelector("#list-luanvan");
+                        var    html = `
+                                <div class="col-sm-12" style="text-align: center; padding-bottom: 40px"><b><h3>Không tìm thấy luận văn phù hợp</h3></b></div>
+                                `;
+                    
+                     listLuanVan.innerHTML = html;
+                    });
+                })
+        </script>
+    </body>
+
+
+</body>
+
+</html>

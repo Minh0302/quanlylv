@@ -1,0 +1,181 @@
+/* **************************************** Custom, iPhone Retina **************************************** */ 
+@media only screen and (min-width : 320px) {
+/* ----- GLOBAL STYLE ----- */
+/* typography */
+.title-lg {
+	font-size: 1.143em; /* 16px */
+}
+/* .end typography */
+
+
+/* footer */
+.footer-heading {
+	font-size: 1.143em; /* 16px */
+}
+footer ul li {
+	margin-bottom: 1em;
+}
+/* end footer */
+} /* .END Custom, iPhone Retina */
+
+
+
+
+
+
+
+
+
+
+
+/* **************************************** Extra Small Devices, Phones **************************************** */ 
+@media only screen and (min-width : 480px) {
+
+} /* .END Extra Small Devices, Phones */
+
+
+/* ==================== MAN HINH DI DONG ==================== */
+@media (max-width: 767px) {
+/* ----- GLOBAL STYLE ----- */
+/* header - top menu */
+header .navbar-collapse {
+	position: absolute;
+	z-index: 99999999;
+	left: 15px;
+  right: 15px;
+    background: #fff;
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+header .navbar .navbar-nav>li>a {
+    color: #333;
+}
+/* end header - top menu */
+
+/* ----- HOME STYLE ----- */
+
+
+/* ----- CATEGORY PAGE STYLE ----- */
+/* --article list-- */
+.lArticleList .media{
+	border-bottom: 1px dotted #e5e5e5;
+	padding-bottom: 20px;
+}
+
+}
+
+
+
+
+
+
+
+/* **************************************** Small Devices, Tablets **************************************** */
+@media only screen and (min-width : 768px) {
+/* ----- GLOBAL STYLE ----- */
+/* typography */
+.title-lg {
+	font-size: 26px;/* 36px */
+}
+.title-xl {
+	font-size: 26px;
+}
+/* end typography */
+
+/* header */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+
+}
+.topMenu .navbar-nav>li {
+
+}
+header .navbar-form .form-group {
+	margin-bottom: 15px;
+}
+
+
+/* footer */
+.footer-heading {
+	margin-top: 0;
+	margin-bottom: 7px;
+	padding-bottom: 6px;
+}
+footer ul li {
+	margin-bottom: 5px;
+}
+/* end footer */
+
+/* ----- HOME STYLE ----- */
+.home-news .media-heading {
+	margin-bottom: 22px;
+}
+.home-news .media-body p {
+	margin-top: 20px;
+	  margin-bottom: 7px;
+}
+
+/* ----- CATEGORY PAGE STYLE ----- */
+/* --article list-- */
+.lArticleList .media {
+  border-bottom: none;
+  margin-bottom: 30px;
+}
+.lArticleList .media-object{
+	width: 300px;
+	margin-bottom: 0;
+}
+.lArticleList .media-left, .lArticleList .media>.pull-left {
+  padding-right: 30px;
+}
+.lArticleList .media-heading {
+  font-size: 15px;
+}
+.lArticleList .media-body p {
+  line-height: 24px;
+}
+/* --date-- */
+.date{
+	margin-bottom: 20px;
+	display: block;
+}
+
+
+
+
+} /* .END Small Devices, Tablets */
+
+
+
+
+
+
+
+
+/* **************************************** Medium Devices, Desktops **************************************** */
+@media only screen and (min-width : 992px) {
+
+} /* .END Medium Devices, Desktops */
+
+
+
+
+
+
+
+
+
+
+
+/* **************************************** Large Devices, Wide Screens **************************************** */
+@media only screen and (min-width : 1200px) {
+
+} /* .END Large Devices, Wide Screens */
+
+
+
+
+
+
+
+
+
+
