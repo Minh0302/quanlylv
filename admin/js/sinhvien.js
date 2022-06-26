@@ -32,7 +32,7 @@ function renderSinhVien(DSSinhVien){
                     <td class="sdt">${SinhVien.sdt}</td>
                     <td class="nienKhoa">${SinhVien.nienKhoa}</td>
                     <td class="chuyenNganh">${SinhVien.chuyenNganh}</td>
-                    <td><button class="btn" onclick="handleSinhVien(${SinhVien.id})" data-toggle="modal" data-target="#updateSinhVien"><i class="fa fa-eye text-success text-active"></i></button>
+                    <td>
                     <button class="btn" onclick="handleDeleteSinhVien(${SinhVien.id})"><i class="fa fa-times text-danger text"></i></button></td>
                 </tr>`;
     });

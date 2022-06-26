@@ -78,7 +78,6 @@
                                 <span>Bộ môn</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="addbomon.html">Thêm bộ môn</a></li>
                                 <li><a href="showbomon.html">Liệt kê bộ môn</a></li>
                             </ul>
                         </li>
@@ -192,8 +191,8 @@
                                         <th>Mục đích đề tài</th>
                                         <th>Nhiệm vụ đề tài</th>
                                         <th>Tóm tắt đề tài</th>
-                                        <th>Created Date</th>
-                                        <th>Modified Date</th>
+                                        <th>ID giáo viên</th>
+                                        <th>Tên giáo viên</th>
                                         <th style="width:30px;"></th>
                                     </tr>
                                 </thead>
@@ -202,20 +201,55 @@
                                 </tbody>
                             </table>
                         </div>
-                        <footer class="panel-footer">
-                            <div class="row">
-                                <div class="col-sm-7 text-right text-center-xs">
-                                    <ul class="pagination pagination-sm m-t-none m-b-none">
-                                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                                        <li><a href="">1</a></li>
-                                        <li><a href="">2</a></li>
-                                        <li><a href="">3</a></li>
-                                        <li><a href="">4</a></li>
-                                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-                                    </ul>
+                        <div class="modal fade" id="updateDeTai" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Cập nhật Đề Tài</h4>
                                 </div>
-                            </div>
-                        </footer>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tên đề tài</label>
+                                        <input type="text" name="ten" class="form-control"
+                                            id="exampleInputEmail1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Mục đích đề tài</label>
+                                        <input type="text" name="mucDich" class="form-control"
+                                            id="exampleInputEmail1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Nhiệm vụ đề tài</label>
+                                        <input type="text" name="nhiemVu" class="form-control"
+                                            id="exampleInputEmail1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tóm tắt đề tài</label>
+                                        <input type="text" name="tomTat" class="form-control"
+                                            id="exampleInputEmail1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Thuộc Giáo Viên</label>
+                                        <select class="form-control m-bot15" id="list-GiaoVien" name="idGiaoVien">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Thuộc Giáo Viên</label>
+                                        <select class="form-control m-bot15" id="list-tenGiaoVien" name="tenGiaoVien">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default"
+                                        data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" id="update-detai">Save changes</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
                     </div>
                 </div>
             </section>

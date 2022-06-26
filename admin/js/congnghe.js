@@ -19,6 +19,9 @@ function getCongNghe(callback) {
     })
     .then(callback);
 }
+
+
+
 function renderCongNghe(DSCongNghe) {
   var listCongNghe = document.querySelector("#list-congnghe");
   var i = 1;
@@ -27,15 +30,11 @@ function renderCongNghe(DSCongNghe) {
                     <td>${i++}</td>
                     <td class="ten">${CongNghe.ten}</td>
                     <td class="percent">${CongNghe.percent}</td>
-                    <td class="modifiedDate">${CongNghe.modifiedDate}</td>
-                    <td class="createdDate">${CongNghe.createdDate}</td>
                     <td>
-                        <button class="btn" onclick="handleCongNghe(${
-                          CongNghe.id
-                        })" data-toggle="modal" data-target="#updateCongNghe"><i class="fa fa-eye text-success text-active"></i></button>
-                        <button class="btn" onclick="handleDeleteCongNghe(${
-                          CongNghe.id
-                        })"><i class="fa fa-times text-danger text"></i></button>
+                    <button class="btn" onclick="handleCongNghe(${CongNghe.id})" data-toggle="modal" data-target="#updateCongNghe"><i class="fa fa-eye text-success text-active"></i></button>
+                    </td>
+                    <td>
+                    <button class="btn" onclick="handleDeleteCongNghe(${CongNghe.id})"><i class="fa fa-times text-danger text"></i></button>
                     </td>
                 </tr>`;
   });
@@ -86,18 +85,18 @@ function handleDeleteCongNghe(id) {
     },
   };
   if (confirm("Are you sure you want to delete?")) {
-    fetch(CongNgheApi + "/" + id, options)
+    fetch(CongNgheApi+'/'+id, options)
       .then(function (response) {
         return response.json();
       })
       .then(function () {
-        var congngheItem = document.querySelector(".congnghe-" + id);
+        var congngheItem = document.querySelector('.congnghe-'+id);
         if (congngheItem) {
           congngheItem.remove();
           alert("Đã xoá thành công!!!");
         }
       });
-      window.location.reload();
+    //  window.location.reload();
   }
 }
 function UpdateCongNghe(id, data, callback) {
@@ -115,9 +114,9 @@ function UpdateCongNghe(id, data, callback) {
     .then(callback);
 }
 function handleCongNghe(id) {
-  var congngheItem = document.querySelector(".congnghe-" + id);
-  var getTen = congngheItem.querySelector(".ten").innerText;
-  var getPercent = congngheItem.querySelector(".percent").innerText;
+  var congngheItem = document.querySelector('.congnghe-' + id);
+  var getTen = congngheItem.querySelector('.ten').innerText;
+  var getPercent = congngheItem.querySelector('.percent').innerText;
 
   var ten = document.querySelector('input[name="ten"]');
   var percent = document.querySelector('input[name="percent"]');

@@ -36,7 +36,6 @@ function renderGiaoVien(DSGiaoVien){
                     <td>${GiaoVien.bomonCode}</td>
                     <td>${GiaoVien.tenBoMon}</td>
                     <td>
-                    <a href="" class="active" ui-toggle-class=""><i class="fa fa-eye text-success text-active"></i></a>
                     <button class="btn" onclick="handleDeleteGiaoVien(${GiaoVien.id})"><i class="fa fa-times text-danger text"></i></button>
                 </td>`;
     });
