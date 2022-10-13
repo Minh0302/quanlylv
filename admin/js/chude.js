@@ -133,7 +133,7 @@ function handleChuDe(id){
       };
       UpdateChuDe(id, formData, function () {
         getChuDe(renderChuDe);
-        alert("Cập nhật thành công1");
+        alert("Cập nhật thành công");
       });
     };
   }

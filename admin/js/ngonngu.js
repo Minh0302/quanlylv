@@ -22,9 +22,6 @@ function renderNgonNgu(DSNgonNgu){
         return `<tr class="ngonngu-${NgonNgu.id}">
                     <td>${i++}</td>
                     <td class="ten">${NgonNgu.ten}</td>
-                    <td class="percent">${NgonNgu.percent}</td>
-                    <td class="createdDate">${NgonNgu.createdDate}</td>
-                    <td class="modifiedDate">${NgonNgu.modifiedDate}</td>
                     <td>
                     <button class="btn" onclick="handleNgonNgu(${NgonNgu.id})"  data-toggle="modal" data-target="#updatengonngu"><i class="fa fa-eye text-success text-active"></i></button>
                     
@@ -52,15 +49,9 @@ function handleCreateNgonNgu(){
     var createBtnNgonNgu = document.querySelector('#create-ngonngu');
     createBtnNgonNgu.onclick = function(){
         var ten = document.querySelector('input[name="ten"]').value;
-        var percent = document.querySelector('input[name="percent"]').value;
-        var createdDate = document.querySelector('input[name="createdDate"]').value;
-        var modifiedDate= document.querySelector('input[name="modifiedDate"]').value;
         
         var formData = {
-            ten: ten,
-            percent: percent,
-            createdDate: createdDate,
-            modifiedDate: modifiedDate
+            ten: ten
         }
         createNgonNgu(formData);
 
@@ -74,15 +65,20 @@ function handleDeleteNgonNgu(id){
             // 'Content-Type': 'application/x-www-form-urlencoded',
         },
     };
-    fetch(NgonNguApi + '/' +id, options)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(){
-            getNgonNgu(function(DSNgonNgu){
-                renderNgonNgu(DSNgonNgu);
+    if (confirm("Are you sure you want to delete?")) {
+        fetch(NgonNguApi + "/" + id, options)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function () {
+                var ngonnguItem = document.querySelector('.ngonngu-'+id);
+                if(ngonnguItem){
+                    ngonnguItem.remove();
+                    alert("Đã xoá thành công!!!");
+                }
             });
-        })
+            window.location.reload();
+        };
 }
 
 function UpdateNgonNgu(id,data,callback){
@@ -102,19 +98,10 @@ function UpdateNgonNgu(id,data,callback){
 function handleNgonNgu(id){
     var ngonnguItem = document.querySelector('.ngonngu-'+id);
     var getten=ngonnguItem.querySelector(".ten").innerText;
-    var getpercent=ngonnguItem.querySelector(".percent").innerText;
-    var getcreatedDate=ngonnguItem.querySelector(".createdDate").innerText;
-    var getmodifiedDate=ngonnguItem.querySelector(".modifiedDate").innerText;
 
     var ten = document.querySelector('input[name="ten"]');
-    var percent = document.querySelector('input[name="percent"]');
-    var createdDate = document.querySelector('input[name="createdDate"]');
-    var modifiedDate = document.querySelector('input[name="modifiedDate"]');
 
     ten.value=getten;
-    percent.value=getpercent;
-    createdDate.value=getcreatedDate;
-    modifiedDate.value=getmodifiedDate;
 
     // console.log(getTen);
     // console.log(getPercent);
@@ -124,14 +111,12 @@ function handleNgonNgu(id){
     var btnUpdate=document.querySelector("#update-ngonngu")
     btnUpdate.onclick=function(){
         var formData={
-            ten:ten.value,
-            percent: percent.value,
-            createdDate: createdDate.value,
-            modifiedDate: modifiedDate.value
+            ten:ten.value
         };
         // if(ten.value != "" && percent.value !="" && createdDate.value !="" && modifiedDate.value !=""){
             UpdateNgonNgu(id,formData,function(){
                 getNgonNgu(renderNgonNgu);
+                alert("Cập nhật thành công");
             })
         // }
         // else{

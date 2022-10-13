@@ -29,7 +29,6 @@ function renderCongNghe(DSCongNghe) {
     return `<tr class="congnghe-${CongNghe.id}">
                     <td>${i++}</td>
                     <td class="ten">${CongNghe.ten}</td>
-                    <td class="percent">${CongNghe.percent}</td>
                     <td>
                     <button class="btn" onclick="handleCongNghe(${CongNghe.id})" data-toggle="modal" data-target="#updateCongNghe"><i class="fa fa-eye text-success text-active"></i></button>
                     </td>
@@ -59,15 +58,13 @@ function handleCreateCongNghe() {
   var createBtnCongNghe = document.querySelector("#create-congnghe");
   createBtnCongNghe.onclick = function () {
     var ten = document.querySelector('input[name="ten"]').value;
-    var percent = document.querySelector('input[name="percent"]').value;
 
     var formData = {
       ten: ten,
-      percent: percent,
+
     };
-    if (ten != "" && percent != "") {
+    if (ten != "" ) {
       ten = "";
-      percent = "";
       createCongNghe(formData);
       alert("Thêm thành công!!!");
       window.location.reload();
@@ -96,7 +93,7 @@ function handleDeleteCongNghe(id) {
           alert("Đã xoá thành công!!!");
         }
       });
-    //  window.location.reload();
+     window.location.reload();
   }
 }
 function UpdateCongNghe(id, data, callback) {
@@ -116,13 +113,12 @@ function UpdateCongNghe(id, data, callback) {
 function handleCongNghe(id) {
   var congngheItem = document.querySelector('.congnghe-' + id);
   var getTen = congngheItem.querySelector('.ten').innerText;
-  var getPercent = congngheItem.querySelector('.percent').innerText;
+
 
   var ten = document.querySelector('input[name="ten"]');
-  var percent = document.querySelector('input[name="percent"]');
+
 
   ten.value = getTen;
-  percent.value = getPercent;
 
   // console.log(getTen);
   // console.log(getPercent);
@@ -132,8 +128,7 @@ function handleCongNghe(id) {
   var btnUpdate = document.querySelector("#update-congnghe");
   btnUpdate.onclick = function () {
     var formData = {
-      ten: ten.value,
-      percent: percent.value,
+      ten: ten.value
     };
     UpdateCongNghe(id, formData, function () {
       getCongNghe(renderCongNghe);
