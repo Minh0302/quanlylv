@@ -58,6 +58,7 @@ function handleCreateSinhVien(){
     createBtnSinhVien.onclick = function(){
         var mssv = document.querySelector('input[name="mssv"]').value;
         var username = document.querySelector('input[name="username"]').value;
+        var password = document.querySelector('input[name="password"]').value;
         var hoTen = document.querySelector('input[name="hoTen"]').value;
         var gioitinh = document.querySelector('input[name="gioitinh"]').value;
         var email = document.querySelector('input[name="email"]').value;
@@ -69,6 +70,7 @@ function handleCreateSinhVien(){
         var formData = {
             mssv: mssv,
             username: username,
+            password: password,
             hoTen: hoTen,
             gioitinh: gioitinh,
             email: email,
@@ -77,9 +79,10 @@ function handleCreateSinhVien(){
             chuyenNganh: chuyenNganh,
             nienKhoa: nienKhoa
         }
-        if(mssv != "" && username != "" && hoTen != "" && gioitinh != "" && email != "" && ngaysinh != "" && sdt != "" && chuyenNganh != "" && nienKhoa != ""){
+        if(mssv != "" && username != "" && password != "" && hoTen != "" && gioitinh != "" && email != "" && ngaysinh != "" && sdt != "" && nienKhoa != ""){
             mssv = "";
             username = "";
+            password = "";
             hoTen = "";
             gioitinh = "";
             email = "";
@@ -133,6 +136,7 @@ function handleSinhVien(id) {
     var sinhvienItem = document.querySelector(".sinhvien-" + id);
     var getMssv = sinhvienItem.querySelector(".mssv").innerText;
     var getUsername = sinhvienItem.querySelector(".username").innerText;
+    var getPassword = sinhvienItem.querySelector(".password").innerText;
     var getTen = sinhvienItem.querySelector(".hoTen").innerText;
     var getGioitinh = sinhvienItem.querySelector(".gioitinh").innerText;
     var getEmail = sinhvienItem.querySelector(".email").innerText;
@@ -143,6 +147,7 @@ function handleSinhVien(id) {
   
     var mssv = document.querySelector('input[name="mssv"]');
     var username = document.querySelector('input[name="username"]');
+    var password = document.querySelector('input[name="password"]');
     var hoTen = document.querySelector('input[name="hoTen"]');
     var gioitinh = document.querySelector('input[name="gioitinh"]');
     var email = document.querySelector('input[name="email"]');
@@ -153,6 +158,7 @@ function handleSinhVien(id) {
   
     mssv.value = getMssv;
     username.value = getUsername;
+    password.value = getPassword;
     hoTen.value = getTen;
     gioitinh.value = getGioitinh;
     email.value = getEmail;
@@ -160,17 +166,14 @@ function handleSinhVien(id) {
     sdt.value = getsdt;
     chuyenNganh.value = getChuyennganh;
     nienKhoa.value = getNienhoa;
-  
-    // console.log(getTen);
-    // console.log(getPercent);
-    // console.log(getCreatedDate);
-    // console.log(getModifiedDate);
+
   
     var btnUpdate = document.querySelector("#update-sinhvien");
     btnUpdate.onclick = function () {
       var formData = {
         ten: mssv.value,
         username: username.value,
+        password: password.value,
         hoTen: hoTen.value,
         gioitinh: gioitinh.value,
         email: email.value,

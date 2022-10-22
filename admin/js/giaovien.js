@@ -70,42 +70,46 @@ function createGiaoVien(data,callback){
         .then(callback)
 }
 function handleCreateGiaoVien(){
-    var createBtnGiaoVien = document.querySelector('#create-giaovien');
-    createBtnGiaoVien.onclick = function(){
-        var msgv = document.querySelector('input[name="msgv"]').value;
-        var username = document.querySelector('input[name="username"]').value;
-        var hoTen = document.querySelector('input[name="hoTen"]').value;
-        var gioitinh = document.querySelector('input[name="gioitinh"]').value;
-        var email = document.querySelector('input[name="email"]').value;
-        var ngaysinh = document.querySelector('input[name="ngaysinh"]').value;
-        var sdt = document.querySelector('input[name="sdt"]').value;
-        var tenBoMon = document.querySelector('select[name="tenBoMon"]').value;
+    console.log("xxxxx");
+    // var createBtnGiaoVien = document.querySelector('#create-giaovien');
+    // createBtnGiaoVien.onclick = function(){
+    //     var msgv = document.querySelector('input[name="msgv"]').value;
+    //     var username = document.querySelector('input[name="username"]').value;
+    //     var password = document.querySelector('input[name="password"]').value;
+    //     var hoTen = document.querySelector('input[name="hoTen"]').value;
+    //     var gioitinh = document.querySelector('input[name="gioitinh"]').value;
+    //     var email = document.querySelector('input[name="email"]').value;
+    //     var ngaysinh = document.querySelector('input[name="ngaysinh"]').value;
+    //     var sdt = document.querySelector('input[name="sdt"]').value;
+    //     var tenBoMon = document.querySelector('select[name="tenBoMon"]').value;
 
-        var formData = {
-            msgv: msgv,
-            username: username,
-            hoTen: hoTen,
-            gioitinh: gioitinh,
-            email: email,
-            ngaysinh: ngaysinh,
-            sdt: sdt,
-            tenBoMon: tenBoMon
-        }
-        if(msgv != "" && username != "" && hoTen !="" && gioitinh != "" && email != "" && ngaysinh != "" && sdt != "" && tenBoMon != ""){
-            msgv = "";
-            username = "";
-            hoTen = "";
-            email = "";
-            ngaysinh = "";
-            sdt = "";
-            tenBoMon = "";
-            gioitinh = "";
-            createGiaoVien(formData);
-            alert("Thêm thành công!!!");
-        } else {
-        alert("Bạn hãy nhập đầy đủ thông tin");
-        }
-    }
+    //     var formData = {
+    //         msgv: msgv,
+    //         username: username,
+    //         password: password,
+    //         hoTen: hoTen,
+    //         gioitinh: gioitinh,
+    //         email: email,
+    //         ngaysinh: ngaysinh,
+    //         sdt: sdt,
+    //         tenBoMon: tenBoMon
+    //     }
+    //     if(msgv != "" && username != "" && password != "" && hoTen !="" && gioitinh != "" && email != "" && ngaysinh != "" && sdt != "" && tenBoMon != ""){
+    //         msgv = "";
+    //         username = "";
+    //         password = "";
+    //         hoTen = "";
+    //         email = "";
+    //         ngaysinh = "";
+    //         sdt = "";
+    //         tenBoMon = "";
+    //         gioitinh = "";
+    //         createGiaoVien(formData);
+    //         alert("Thêm thành công!!!");
+    //     } else {
+    //     alert("Bạn hãy nhập đầy đủ thông tin");
+    //     }
+    // }
 }
 function handleDeleteGiaoVien(id){
     var options = {

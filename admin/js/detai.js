@@ -169,7 +169,7 @@ function handleDeTai(id){
     var getNhiemVu=detaiItem.querySelector(".nhiemVu").innerText;
     var getTomTat=detaiItem.querySelector(".tomTat").innerText;
     var getidGiaoVien=detaiItem.querySelector(".idGiaoVien").innerText;
-    var getTenGiaoVien=detaiItem.querySelector(".tenGiaoVien").innerText;
+
 
 
     var ten = document.querySelector('input[name="ten"]');
@@ -177,21 +177,14 @@ function handleDeTai(id){
     var nhiemvu = document.querySelector('input[name="nhiemVu"]');
     var tomtat = document.querySelector('input[name="tomTat"]');
     var idgiaovien = document.querySelector('select[name="idGiaoVien"]');
-    var tengiaovien = document.querySelector('select[name="tenGiaoVien"]');
+
 
     ten.value=getTen;
     mucdich.value=getMucDich;
     nhiemvu.value=getNhiemVu;
     tomtat.value=getTomTat;
     idgiaovien.value=getidGiaoVien;
-    tengiaovien.value=getTenGiaoVien;
 
-    console.log(ten.value);
-    console.log(getMucDich);
-    console.log(getNhiemVu);
-    console.log(getTomTat);
-    console.log(getidGiaoVien);
-    console.log(getTenGiaoVien);
 
     var btnUpdate = document.querySelector("#update-detai");
     btnUpdate.onclick = function () {
@@ -200,8 +193,7 @@ function handleDeTai(id){
         mucDich: mucdich.value,
         nhiemVu: nhiemvu.value,
         tomTat: tomtat.value,
-        idGiaoVien: idgiaovien.value,
-        tenGiaoVien: tengiaovien.value
+        idGiaoVien: idgiaovien.value
       };
       UpdateDeTai(id, formData, function () {
         getDeTai(renderDeTai);
