@@ -85,7 +85,7 @@ function renderLuanVan(DSLuanVan) {
                         <center>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="details.html/${LuanVan.id}" class="btn btn-sm btn-outline-secondary">View</a>
+                                    <a href="details.html?id=${LuanVan.id}" class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
                                 <small class="text-muted">${day}-${month}-${year}</small>
                             </div>

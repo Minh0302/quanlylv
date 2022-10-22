@@ -188,27 +188,28 @@
 							<div class="panel-body">
 								<!-- CONTACT FORM-->
 								<div id="divAlert"></div>
-								<form id="contact">
+			
 									<div class="form-group">
 										<label>Họ tên</label>
-										<input type="text" id="txtUsername" value="" class="form-control">
+										<input type="text" class="form-control" name="ten">
 									</div>
 									<div class="form-group">
 										<label>Điện thoại (*)</label>
-										<input type="tel" id="txtPhone" maxlength="11" value="" class="form-control">
+										<input type="tel" class="form-control" name="phone">
 									</div>
 									<div class="form-group">
 										<label>E-Mail (*)</label>
-										<input type="text" id="txtEmail" value="" class="form-control">
+										<input type="text" class="form-control" name="email">
 									</div>
 									<div class="form-group">
 										<label>Nội dung (*)</label>
-										<textarea name="message" id="txtContent" rows="5" cols="25"
+										<textarea id="note" name="note" rows="5" cols="25"
 											class="form-control"></textarea>
 									</div>
-									<a href="" onclick="" class="btn btn-primary">Gửi đi</a>
-									<a href="" onclick="" class="btn btn-default">Hủy bỏ</a>
-								</form>
+									<!-- <a href="" onclick="" class="btn btn-primary">Gửi đi</a>
+									<a href="" onclick="" class="btn btn-default">Hủy bỏ</a> -->
+									<button id="create-contact" type="submit" class="btn btn-primary">Gửi đi</button>
+								
 								<!-- END CONTACT FORM-->
 							</div>
 						</div>
@@ -268,6 +269,7 @@
 	<script src="js/jstree/dist/jstree.min.js"></script>
 	<script src="js/ui-tree.js"></script>
 	<script type="text/javascript" src="javascripts/login.js"></script>
+	<script type="text/javascript" src="javascripts/contact.js"></script>
 	<script>
 		jQuery(document).ready(function () {
 			UITree.init();
