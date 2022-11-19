@@ -300,7 +300,7 @@ function getNgonNgu(callback) {
 }
 function renderNgonNgu(DSNgonNgu) {
   var listNgonNgu = document.querySelector("#list-ngonngu");
-  var htmls = DSNgonNgu.ngonNgu.map(function (NgonNgu) {
+  var htmls = DSNgonNgu.map(function (NgonNgu) {
     return `
           <option class="ngonNgu" data-code="${NgonNgu.id}" value="${NgonNgu.ten}">${NgonNgu.ten}</option>`;
   });

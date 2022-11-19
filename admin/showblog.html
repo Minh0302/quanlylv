@@ -78,6 +78,7 @@
                                 <span>Bộ môn</span>
                             </a>
                             <ul class="sub">
+                                <li><a href="addbomon.html">Thêm bộ môn</a></li>
                                 <li><a href="showbomon.html">Liệt kê bộ môn</a></li>
                             </ul>
                         </li>
@@ -196,106 +197,47 @@
                 <div class="table-agile-info">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            TÀI LIỆU
+                            BLOG
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped b-t b-light">
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên đề tài</th>
-                                        <th>MSSV</th>
-                                        <th>Họ tên</th>
-                                        <th>MSGV</th>
-                                        <th>Họ tên</th>
-                                        <th>File đính kèm</th>
-                                        <th>Mô tả</th>
-                                        <th>Tóm tắt</th>
-                                        <th>Vị trí</th>
-                                        <th>Bộ môn ID</th>
-                                        <th>Bộ môn Tên</th>
-                                        <th>Chủ đề</th>
-                                        <th>Ngôn ngữ</th>
-                                        <th>Công nghệ</th>
+                                        <th>Tiêu đề</th>
+                                        <th>Nội dung</th>
+                                        <th>Ngày tạo</th>
                                         <th style="width:30px;"></th>
                                     </tr>
                                 </thead>
-                                <tbody id="list-tailieu">
-
+                                <tbody id="list-blog">
+                                   
                                 </tbody>
                             </table>
                         </div>
-                        <div class="modal fade" id="updateLuanVan" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="updateblog" tabindex="-1" role="dialog"
                             aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"
                                             aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">Cập nhật công nghệ</h4>
+                                        <h4 class="modal-title">Cập nhật Blog</h4>
                                     </div>
-                                    
                                     <div class="modal-body">
                                         <div class="form-group">
-                                            <label for="tuaDe">Tên đề tài</label>
-                                            <input type="text" name="tuaDe" class="form-control" id="tuaDe">
+                                            <label for="exampleInputEmail1">Tiêu đề</label>
+                                            <input type="text" name="title" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="mssv">MSSV</label>
-                                            <input type="text" name="mssv" class="form-control" id="mssv">
+                                            <label for="exampleInputEmail1">Nội dung</label>
+                                            <textarea type="text" name="desc" id="desc" class="form-control"></textarea>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="msgv">MSGV</label>
-                                            <input type="text" name="msgv" class="form-control" id="msgv">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="file">File đính kèm</label>
-                                            <input type="file" name="file" class="form-control" id="file">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="moTa">Mô tả</label>
-                                            <input type="text" name="moTa" class="form-control" id="moTa">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tomTat">Tóm tắt</label>
-                                            <input type="text" name="tomTat" class="form-control" id="tomTat">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="viTri">Vị trí</label>
-                                            <input type="text" name="viTri" class="form-control" id="viTri">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="bomon_id">Bộ Môn</label>
-                                            <select class="form-control m-bot15" id="bomon_id" name="bomon_id">
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Chọn chủ đề</label><br>
-                                            <div id="chude_id" name="chude_id">
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Chọn Ngôn ngữ</label><br>
-                                            <div id="ngonngu_id" name="ngonngu_id">
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Chọn Công nghệ</label><br>
-                                            <div id="congnghe_id" name="congnghe_id">
-
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary" id="update-luanvan">Save
-                                                changes</button>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" id="update-blog">Save changes</button>
                                     </div>
-
                                 </div><!-- /.modal-content -->
                             </div><!-- /.modal-dialog -->
                         </div>
@@ -307,103 +249,13 @@
 
         <!--main content end-->
     </section>
-    <script src="js/tailieu.js"></script>
+    <script src="js/blog.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="js/scripts.js"></script>
     <!-- <script src="js/jquery.slimscroll.js"></script>
     <script src="js/jquery.nicescroll.js"></script>
     <script src="js/jquery.scrollTo.js"></script> -->
-    <script>
-        function handleLuanVan(id){
-    var luanVanItem = document.querySelector(".luanvan-"+id);
-    var gettuaDe = luanVanItem.querySelector(".tuaDe").innerText;
-    var getmssv = luanVanItem.querySelector(".mssv").innerText;
-    var getmsgv = luanVanItem.querySelector(".msgv").innerText;
-    var getfile = luanVanItem.querySelector(".file").innerText;
-    var getmoTa = luanVanItem.querySelector(".moTa").innerText;
-    var gettomTat = luanVanItem.querySelector(".tomTat").innerText;
-    var getviTri = luanVanItem.querySelector(".viTri").innerText;
-    var getbomon_id = luanVanItem.querySelector(".bomon_id").innerText;
-    var getchude_id = luanVanItem.querySelector(".chude_id").innerText;
-    var getngonngu_id = luanVanItem.querySelector(".ngonngu_id").innerText;
-    var getcongnghe_id = luanVanItem.querySelector(".congnghe_id").innerText;
-
-
-    var tuaDe = document.querySelector('input[name="tuaDe"]');
-    var mssv = document.querySelector('input[name="mssv"]');
-    var msgv = document.querySelector('input[name="msgv"]');
-    var file = document.querySelector('input[name="file"]');
-    var tomTat = document.querySelector('input[name="tomTat"]');
-    var moTa = document.querySelector('input[name="moTa"]');
-    var viTri = document.querySelector('input[name="viTri"]');
-    var bomon_id = document.querySelector('select[name="bomon_id"]');
-    var chude_id = $.map($('input[name="chude_id"]:checked'), function (chude_id) { return chude_id.value; });
-    var ngonngu_id = $.map($('input[name="ngonngu_id"]:checked'), function (ngonngu_id) { return ngonngu_id.value; });
-    var congnghe_id = $.map($('input[name="congnghe_id"]:checked'), function (congnghe_id) { return congnghe_id.value; });
-
-    tuaDe.value = gettuaDe;
-    mssv.value = getmssv;
-    msgv.value = getmsgv;
-    file.files[0] = getfile;
-    tomTat.value = gettomTat;
-    moTa.value = getmoTa;
-    viTri.value = getviTri;
-    bomon_id.value = getbomon_id;
-    chude_id = getchude_id;
-    ngonngu_id = getngonngu_id;
-    congnghe_id = getcongnghe_id;
-    
-    console.log(gettuaDe);
-    console.log(getmssv);
-    console.log(getmsgv);
-    console.log(getfile);
-    console.log(getmoTa);
-    console.log(gettomTat);
-    console.log(getviTri);
-    console.log(getbomon_id);
-    console.log(getchude_id);
-    console.log(getngonngu_id);
-    console.log(getcongnghe_id);
-
-    var btnUpdateLV = document.querySelector('#update-luanvan');
-    btnUpdateLV.onclick = function(){
-        var formdata = new FormData();
-            formdata.append('file', $('#file').get(0).files[0]);
-            var luanvan = {
-                tuaDe: $('#tuaDe').val(),
-                moTa: $('#moTa').val(),
-                tomTat: $('#tomTat').val(),
-                viTri: $('#viTri').val(),
-                mssv: $('#mssv').val(),
-                msgv: $('#msgv').val(),
-                bomon_id: $('#bomon_id').val(),
-                chude_id: $.map($('input[name="chude_id"]:checked'), function (chude_id) { return chude_id.value; }),
-                ngonngu_id: $.map($('input[name="ngonngu_id"]:checked'), function (ngonngu_id) { return ngonngu_id.value; }),
-                congnghe_id: $.map($('input[name="congnghe_id"]:checked'), function (congnghe_id) { return congnghe_id.value; }),
-            }
-            data = JSON.stringify(luanvan);
-            formdata.append('luanvan', data);
-            console.log(data);
-            var requestOptions = {
-                method: 'PUT',
-                body: formdata,
-                redirect: 'follow'
-            };
-            fetch('http://127.0.0.1:8120/api/luanvan/' + id, requestOptions)
-                .then(response => response.text())
-                .then(function (response){
-                    alert("Cập nhật thành công");
-                    // window.location.reload();
-                })
-                .catch(function (error){
-                    alert("Cập nhật thất bại");
-                    // window.location.reload();
-                });
-    }
-
-}
-    </script>
 </body>
 
 </html>

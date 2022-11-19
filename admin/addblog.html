@@ -78,6 +78,7 @@
                                 <span>Bộ môn</span>
                             </a>
                             <ul class="sub">
+                                <li><a href="addbomon.html">Thêm bộ môn</a></li>
                                 <li><a href="showbomon.html">Liệt kê bộ môn</a></li>
                             </ul>
                         </li>
@@ -193,44 +194,41 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <div class="table-agile-info">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            GIÁO VIÊN
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped b-t b-light">
-                                <thead>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Mã GV</th>
-                                        <th>Username</th>
-                                        <th>Tên giáo viên</th>
-                                        <th>Giới tính</th>
-                                        <th>Email</th>
-                                        <th>Ngày Sinh</th>
-                                        <th>SĐT</th>
-                                        <th>Mã bộ môn</th>
-                                        <th>Tên Bộ môn</th>
-                                        <th style="width:30px;"></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="list-giaovien">
+                <div class="form-w3layouts">
+                    <!-- page start-->
+                    <!-- page start-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    BLOG
+                                </header>
+                                <div class="panel-body">
+                                    <div class="position-center">
 
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Tiêu đề</label>
+                                            <input type="text" name="title" class="form-control"
+                                                id="exampleInputEmail1">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Nội dung</label>
+                                            <textarea type="text" name="desc" id="desc" class="form-control"></textarea>
+                                        </div>
+                                        <button id="create-blog" type="submit" class="btn btn-info">Submit</button>
 
-                                </tbody>
-                            </table>
+                                    </div>
+
+                                </div>
+                            </section>
+
                         </div>
-                        
                     </div>
                 </div>
             </section>
-
         </section>
-
-        <!--main content end-->
     </section>
-    <script src="js/giaovien.js"></script>
+    <script src="js/blog.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="js/scripts.js"></script>

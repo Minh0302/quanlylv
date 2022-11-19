@@ -18,7 +18,7 @@ function getNgonNgu(callback){
 function renderNgonNgu(DSNgonNgu){
     var listNgonNgu = document.querySelector('#list-ngonngu');
     var i =1;
-    var htmls = DSNgonNgu.ngonNgu.map(function(NgonNgu){
+    var htmls = DSNgonNgu.map(function(NgonNgu){
         return `<tr class="ngonngu-${NgonNgu.id}">
                     <td>${i++}</td>
                     <td class="ten">${NgonNgu.ten}</td>
