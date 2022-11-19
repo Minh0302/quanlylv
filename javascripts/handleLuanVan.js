@@ -70,11 +70,11 @@ function renderLuanVan(DSLuanVan) {
   var listLuanVan = document.querySelector("#list-luanvan");
   const lv = document.querySelectorAll("a.luanvan");
   var htmls = DSLuanVan.luavan.map(function (LuanVan) {
-  const date = LuanVan.createdDate;
-  let d = new Date(date);
-  let year = d.getFullYear();
-  let month = d.getMonth() + 1;
-  let day = d.getDate();
+    const date = LuanVan.createdDate;
+    let d = new Date(date);
+    let year = d.getFullYear();
+    let month = d.getMonth() + 1;
+    let day = d.getDate();
     return `
             <div class="col-sm-4" style="height: 450px; padding-bottom: 40px">
                 <div class="card shadow-sm">
@@ -176,9 +176,9 @@ async function filterLuanVan(DSLuanVan) {
   const datalv = data.luavan;
   const dataRender = datalv.filter((elem) => {
     return (
-      elem.chuDe.some(function (cd) {return cd === selectChuDe}) &&
-      elem.ngonNgu.some(function (nn) {return nn === selectNgonNgu}) &&
-      elem.congNghe.some(function(cn) {return cn === selectCongNghe})
+      elem.chuDe.some(function (cd) { return cd === selectChuDe }) &&
+      elem.ngonNgu.some(function (nn) { return nn === selectNgonNgu }) &&
+      elem.congNghe.some(function (cn) { return cn === selectCongNghe })
     )
   });
   var htmls = dataRender.map(function (LuanVan) {
@@ -322,4 +322,47 @@ function renderCongNghe(DSCongNghe) {
   });
   var html = htmls.join("");
   listCongNghe.innerHTML = html;
+}
+
+async function related(callback) {
+
+  // fetch("http://localhost:8120/api/luanvan/relate",{
+  // body:
+  //   {
+  //     "ngonngu": [1,2],
+  //     "congnghe":[2,1],
+  //     "gvid": 4
+  //   }
+  // })
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(callback);
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "ngonngu": [
+      "Java",
+      "JavaScript",
+      "Python"
+    ],
+    "congnghe": [
+      "Big Data",
+      "AI"
+    ],
+    "gvid": 4
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("http://localhost:8120/api/luanvan/relate", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 }

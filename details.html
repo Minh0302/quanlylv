@@ -189,8 +189,8 @@
                         <div class="media overflowvisible">
                             <div id="list-chitiet"></div>
                             <h4>Tài liệu liên quan</h4>
-                                        <div class="row">
-                                            <div class="col-sm-4">
+                            <div class="row" id="related">
+                                <!-- <div class="col-sm-4">
                                                 <div class="card shadow-sm">
                                                     <img src="images/no-thumb/a1.png" class="card-img-top" width="100%"
                                                         height="300">
@@ -264,8 +264,8 @@
                                                     </div>
                                                 </div>
 
-                                            </div>
-                                        </div>
+                                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
@@ -344,26 +344,94 @@
         <script type="text/javascript" src="javascripts/login.js"></script>
         <!-- <script type="text/javascript" src="javascripts/handleDetails.js"></script> -->
         <script>
+ $(document).ready(function() {
+
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "ngonngu": [
+                    "Java",
+                    "JavaScript",
+                    "Python"
+                ],
+                "congnghe": [
+                    "Big Data",
+                    "AI"
+                ],
+                "gvid": 4
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            // fetch("http://localhost:8120/api/luanvan/relate", requestOptions)
+            //   .then(response => response.text())
+            //   .then(result => console.log(result))
+            //   .catch(error => console.log('error', error));
+            fetch("http://localhost:8120/api/luanvan/relate", requestOptions)
+                .then(response => response.json())
+                .then(function (response) {
+                    let htmls = '';
+                    var related = document.querySelector("#related");
+                    console.log(response);
+                    // console.log("xxxxxxxxxx");
+                    response.forEach(element => {
+                        htmls += `
+        <div class="col-sm-4">
+                    <div class="card shadow-sm">
+                        <img src="images/no-thumb/a1.png" class="card-img-top" width="100%"
+                            height="300">
+
+                        <div class="card-body">
+                            <h4> ${element.tuaDe}</h4>
+                            <center>
+                                <div
+                                    class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="details.html?id=${element.id}"
+                                            class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href=""
+                                            class="btn btn-sm btn-outline-secondary"><i
+                                                class="fas fa-eye">100</i></a>
+                                    </div>
+                                    <small class="text-muted">9 mins ago</small>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>`
+                    });
+                    related.innerHTML = htmls;
+                })
+                .catch(error => console.log('error', error));
+});
             const url_string = window.location.href;
             const url = new URL(url_string);
             const id = url.searchParams.get('id');
-            var api_details = 'http://localhost:8120/api/luanvan/'+id;
+            var api_details = 'http://localhost:8120/api/luanvan/' + id;
             console.log(api_details);
-                var requestOptions = {
-                    method: 'GET',
-                    redirect: 'follow'
-                };
-                fetch(api_details, requestOptions)
-                    .then(response => response.json())
-                    .then(result => {
-                        var listLuanVan = document.querySelector("#list-chitiet");
-                        var LuanVan = result;
-                        const date = LuanVan.createdDate;
-                        let d = new Date(date);
-                        let year = d.getFullYear();
-                        let month = d.getMonth() + 1;
-                        let day = d.getDate();
-                        var    html = `
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+            fetch(api_details, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    var listLuanVan = document.querySelector("#list-chitiet");
+                    var LuanVan = result;
+                    const date = LuanVan.createdDate;
+                    let d = new Date(date);
+                    let year = d.getFullYear();
+                    let month = d.getMonth() + 1;
+                    let day = d.getDate();
+                    // related();
+                    var html = `
                         <div class="media-body">
                                 <h4 class="media-heading">
                                     <a href="#">${LuanVan.tuaDe}:</a>
@@ -432,10 +500,10 @@
 
                             </div>
                                 `;
-                    
-                     listLuanVan.innerHTML = html;
-                    })
-                    .catch(error => console.log('error', error));
+
+                    listLuanVan.innerHTML = html;
+                })
+                .catch(error => console.log('error', error));
 
         </script>
     </body>
