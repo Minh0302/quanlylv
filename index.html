@@ -19,7 +19,6 @@
     <link href="css/toastr.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/toastr.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Arimo:700&subset=vietnamese,latin' rel='stylesheet' type='text/css'>-->
@@ -44,66 +43,23 @@
 </head>
 
 <body>
-
     <body class="child-body">
         <div class="preHeader">
             <div class="container">
                 <ul class="list-inline navbar-text  soc-list hidden-xs">
                 </ul>
-                <!-- <ul class="list-inline navbar-text navbar-right">
-                    <li id="ulUserBar">
-                        <a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-user"></i> Đăng nhập</a>
-                    </li>
-                </ul> -->
                 <ul class="list-inline navbar-text navbar-right">
                     <li id="ulUserBar" class="dropdown">
                         <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
                             class="dropdown-toggle" href="#">
-                            <i class="fa fa-user"> B1809606 </i>
+                            <span id="fullname"></span>
+                            <i class="fa fa-user"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="">Thông tin cá nhân</a></li>
-                            <li><a href="">Thoát</a></li>
+                            <li><a href="" onclick="logout()">Thoát</a></li>
                         </ul>
             </div>
         </div>
-        <!-- Modal login -->
-        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" id="btnCloseModal" data-dismiss="modal"
-                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Đăng nhập</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group"></div>
-                        <form id="form-login">
-                            <div class="form-group">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtLoginName">Tên truy cập</label>
-                                <input class="form-control" id="username" placeholder="LoginName" value="">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtPassword">Mật khẩu</label>
-                                <input type="password" id="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Lưu mật khẩu
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                        <button type="button" id="submit-form" class="btn btn-primary">Đăng nhập</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <!--========== TOP BANNER =========-->
         <div class="topBanner hidden-xs">
@@ -327,7 +283,7 @@
         <!-- Theme JS -->
         <script type="text/javascript" src="js/searchjs.js"></script>
         <script type="text/javascript" src="js/mudim.js"></script>
-        <script type="text/javascript" src="javascripts/login.js"></script>
+        <script src="javascripts/interceptors.js"></script>
         <script type="text/javascript" src="javascripts/handleLuanVan.js"></script>
         <!-- <script type="text/javascript" src="javascripts/paginate.js"></script> -->
         <script>

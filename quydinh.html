@@ -56,49 +56,17 @@
                 <ul class="list-inline navbar-text  soc-list hidden-xs">
                 </ul>
                 <ul class="list-inline navbar-text navbar-right">
-                    <li id="ulUserBar">
-                        <a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-user"></i> Đăng nhập</a>
-                    </li>
-                </ul>
+                    <li id="ulUserBar" class="dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
+                            class="dropdown-toggle" href="#">
+                            <span id="fullname"></span>
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" onclick="logout()">Thoát</a></li>
+                        </ul>
             </div>
         </div>
-        <!-- Modal login -->
-        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" id="btnCloseModal" data-dismiss="modal"
-                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Đăng nhập</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group"></div>
-                        <form id="form-login">
-                            <div class="form-group">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtLoginName">Tên truy cập</label>
-                                <input class="form-control" id="username" placeholder="LoginName" value="">
-                            </div>
-                            <div class="form-group">
-                                <label for="txtPassword">Mật khẩu</label>
-                                <input type="password" id="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Lưu mật khẩu
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                        <button type="button" id="submit-form" class="btn btn-primary">Đăng nhập</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <!--========== TOP BANNER =========-->
         <div class="topBanner hidden-xs">
@@ -291,10 +259,8 @@
         <!-- Theme JS -->
         <script type="text/javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
-        <script type="text/javascript" src="javascripts/login.js"></script>
+        <script type="text/javascript" src="javascripts/interceptors.js"></script>
     </body>
-
-
 </body>
 
 </html>

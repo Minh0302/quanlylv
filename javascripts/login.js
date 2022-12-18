@@ -2,22 +2,24 @@ const username = document.querySelector('#username');
 const password = document.querySelector('#password');
 const submitForm = document.querySelector('#submit-form');
 const signinForm = document.querySelector('#form-login');
-const userBar = document.querySelector('#ulUserBar');
 
 const apiLogin = "http://localhost:8120/api/auth/signin";
-var nextUrl;
 
 signinForm.onsubmit = function (event) {
     event.preventDefault();
 }
 
 submitForm.onclick = () => {
-    login(handleToken);
+
+    if(username.value == "" || password.value == "") {
+        return;
+    } 
+    login();
 }
 
-function login(callback) {
+function login() {
     fetch(apiLogin, {
-        method: 'post',
+        method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
@@ -26,29 +28,48 @@ function login(callback) {
             password: password.value
         })
     })
-        .then(response => response.json())
-        .then(callback)
+        .then(response => {
+            if(response.status == 200){
+                return response.json();
+            } else {
+                window.alert("username or password inccorect!");
+                return "error";
+            }
+        })
+        .then((json) => {
+            if(json != "error") {
+                localStorage.setItem("auth", JSON.stringify(json));
+                if (json.admin) {
+                    if(localStorage.getItem('previousUrlAdmin')) {
+                        window.location.href = localStorage.getItem('previousUrlAdmin');
+                    } else {
+                        window.location.href = "admin/index.html";
+                    }
+                } else {
+                    if(localStorage.getItem('previousUrl')) {
+                        window.location.href = localStorage.getItem('previousUrl');
+                    } else {
+                        window.location.href = "index.html";
+                    }
+                }
+            }
+        })
 }
 
-function handleToken(result) {
+// function handleToken(result) {
 
-    if(result.nextUrl!=null){
-        console.log(result.nextUrl);
-        location.href = "./admin/index.html";
-    }
-    htmls = `<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#"> 
-                <i class="fa fa-user"> ${result.fullname}</i>  
-            </a>  
-            <ul class="dropdown-menu">  
-                <li><a href="#">Thông tin cá nhân</a></li>  
-                <li><a href="#">Thoát</a></li>  
-            </ul>`;
-            
-    let accessToken = result.type +' ' + result.token;
-    localStorage.setItem('accessToken', accessToken);
+//     htmls = `<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#"> 
+//                 <i class="fa fa-user"> ${result.fullname}</i>  
+//             </a>  
+//             <ul class="dropdown-menu">  
+//                 <li><a href="#">Thông tin cá nhân</a></li>  
+//                 <li><a href="#">Thoát</a></li>  
+//             </ul>`;
 
-    $('#login').modal('hide');
-    userBar.classList.add('dropdown');
-    userBar.innerHTML = htmls;
-}
+//     let accessToken = result.type +' ' + result.token;
+//     localStorage.setItem('accessToken', accessToken);
+// }
 
+// function logout() {
+//     localStorage.clear();
+// }
